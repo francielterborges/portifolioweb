@@ -71,6 +71,51 @@ h1, h2, h3, h4, .headline {
     letter-spacing: -0.02em;
 }
 
+.display-lg {
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 0.85;
+}
+
+.display-site {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.9;
+}
+
+.headline-lg {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1;
+}
+
+.headline-md {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.headline-sm {
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+}
+
+.body-lg {
+    font-size: 1.2rem;
+    color: var(--color-on-surface-variant);
+    font-weight: 300;
+}
+
+.text-variant {
+    font-size: 1rem;
+    color: var(--color-on-surface-variant);
+    line-height: 1.7;
+}
+
+.label-tech {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.7rem;
+    color: var(--color-primary);
+}
+
 /* Pillow Shapes (Capsules) */
 .pill {
     background-color: var(--color-surface-low);
@@ -232,8 +277,6 @@ section {
 }
 
 .display-lg {
-    font-size: clamp(4rem, 10vw, 8rem);
-    line-height: 0.85;
     margin-bottom: 2rem;
 }
 
