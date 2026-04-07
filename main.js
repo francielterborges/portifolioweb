@@ -156,4 +156,75 @@ document.addEventListener('DOMContentLoaded', () => {
             heroVisual.style.transform = `translateY(${scrolled * 0.1}px) rotate(2deg)`;
         }
     });
+
+    // 5. Project Slider Navigation
+    const carousel = document.getElementById('project-carousel');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+
+    if (carousel && prevBtn && nextBtn) {
+        const getScrollAmount = () => {
+            const firstItem = carousel.querySelector('.project-item');
+            if (firstItem) {
+                const style = window.getComputedStyle(carousel.querySelector('.carousel-track'));
+                const gap = parseInt(style.gap) || 32;
+                return firstItem.offsetWidth + gap;
+            }
+            return 352;
+        };
+
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+                left: getScrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+                left: -getScrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+
+        // Hide/Show arrows based on scroll position (optional but premium)
+        const toggleArrows = () => {
+            const isAtStart = carousel.scrollLeft <= 10;
+            const isAtEnd = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10;
+            
+            prevBtn.style.opacity = isAtStart ? '0.3' : '1';
+            prevBtn.style.pointerEvents = isAtStart ? 'none' : 'all';
+            
+            nextBtn.style.opacity = isAtEnd ? '0.3' : '1';
+            nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'all';
+        };
+
+        carousel.addEventListener('scroll', toggleArrows);
+        window.addEventListener('resize', toggleArrows);
+        toggleArrows(); // Initial state
+    }
+
+    // 6. Mobile Menu Logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-links a');
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        };
+
+        if (menuClose) menuClose.addEventListener('click', closeMenu);
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    }
 });

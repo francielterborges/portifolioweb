@@ -25,6 +25,20 @@
                 <a href="#about">Sobre</a>
                 <a href="#contact">Contato</a>
             </div>
+            <!-- Hamburger Menu for Mobile -->
+            <button class="hamburger-menu" id="menu-toggle" aria-label="Abrir Menu">
+                <i class="ti ti-menu-2"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobile-menu">
+            <button class="close-menu" id="menu-close"><i class="ti ti-x"></i></button>
+            <div class="mobile-links">
+                <a href="#home">Início</a>
+                <a href="#projects">Projetos</a>
+                <a href="#about">Sobre</a>
+                <a href="#contact">Contato</a>
+            </div>
         </div>
     </nav>
 
@@ -32,21 +46,20 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container hero-grid">
+                <!-- Visual Item moved up for Mobile centering if needed -->
+                <div class="hero-visual">
+                    <div class="hero-capsule glass circular">
+                        <img src="assets/profile2.jpeg" alt="Francielter Borges" id="hero-img">
+                    </div>
+                </div>
                 <div class="hero-content">
-                    <span class="label-tech glass pill">Portifólio Web 2026
-                    </span>
+                    <span class="label-tech glass pill desktop-only">Portifólio Web 2026</span>
                     <h1 class="display-lg">Francielter<br><span class="text-neon">_Borges</span></h1>
                     <p class="hero-subline">Desconstruindo o convencional para elevar a percepção de marca através do
                         Digital.</p>
                     <div class="hero-cta">
                         <a href="#projects" class="btn-primary">VER PROJETOS <i
                                 class="ti ti-arrow-narrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-capsule glass pill">
-                        <!-- Esta imagem será gerada -->
-                        <img src="assets/profile2.jpeg" alt="Abstract High-Tech Visual" id="hero-img">
                     </div>
                 </div>
             </div>
@@ -59,76 +72,98 @@
                 </div>
             </div>
 
-            <div class="projects-carousel">
-                <div class="carousel-track">
-                    <!-- Project 1 -->
-                    <div class="project-item pill" data-project="twist">
-                        <div class="project-image"><img src="https://picsum.photos/seed/twist/600/400" alt="Twist">
+            <div class="projects-container">
+                <div class="projects-carousel" id="project-carousel">
+                    <div class="carousel-track">
+                        <!-- Project 1 -->
+                        <div class="project-item pill" data-project="twist">
+                            <div class="project-image">
+                                <img src="https://picsum.photos/seed/twist/600/400" alt="Twist">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">BRANDING 2026</span>
+                                <div class="project-title-row">
+                                    <h3 class="headline-sm">Twist</h3>
+                                    <i class="ti ti-arrow-up-right"></i>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="headline-sm">Twist</h3>
-                        <p>Lorem ipsum dolor sit amet elit.</p>
-                    </div>
-                    <!-- Project 2 -->
-                    <div class="project-item pill" data-project="botanica">
-                        <div class="project-image"><img src="https://picsum.photos/seed/botanica/600/400"
-                                alt="Botânica"></div>
-                        <h3 class="headline-sm">Botânica</h3>
-                        <p>Consectetur adipiscing elit brev.</p>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="project-item pill" data-project="archello">
-                        <div class="project-image"><img src="https://picsum.photos/seed/archello/600/400"
-                                alt="Archello"></div>
-                        <h3 class="headline-sm">Archello</h3>
-                        <p>Mauris vitae est imperdiet sed.</p>
-                    </div>
-                    <!-- Project 4 -->
-                    <div class="project-item pill" data-project="runners">
-                        <div class="project-image"><img src="https://picsum.photos/seed/runners/600/400" alt="4RUNNERS">
+                        <!-- Project 2 -->
+                        <div class="project-item pill" data-project="botanica">
+                            <div class="project-image">
+                                <img src="https://picsum.photos/seed/botanica/600/400" alt="Botânica">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">ECOMMERCE 2026</span>
+                                <div class="project-title-row">
+                                    <h3 class="headline-sm">Botânica</h3>
+                                    <i class="ti ti-arrow-up-right"></i>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="headline-sm">4RUNNERS</h3>
-                        <p>Nulla facilisi proin gravida nibh.</p>
-                    </div>
-                    <!-- Project 5 -->
-                    <div class="project-item pill" data-project="enelx">
-                        <div class="project-image"><img src="https://picsum.photos/seed/enelx/600/400" alt="EnelX">
+                        <!-- Project 3 -->
+                        <div class="project-item pill" data-project="archello">
+                            <div class="project-image">
+                                <img src="https://picsum.photos/seed/archello/600/400" alt="Archello">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">ARCHITECT 2026</span>
+                                <div class="project-title-row">
+                                    <h3 class="headline-sm">Archello</h3>
+                                    <i class="ti ti-arrow-up-right"></i>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="headline-sm">EnelX</h3>
-                        <p>Donec id elit non mi porta gravida.</p>
-                    </div>
-                    <!-- Project 6 -->
-                    <div class="project-item pill" data-project="befly">
-                        <div class="project-image"><img src="https://picsum.photos/seed/befly/600/400" alt="Befly">
+                        <!-- Project 4 -->
+                        <div class="project-item pill" data-project="runners">
+                            <div class="project-image">
+                                <img src="https://picsum.photos/seed/runners/600/400" alt="4RUNNERS">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">PERFORMANCE 2026</span>
+                                <div class="project-title-row">
+                                    <h3 class="headline-sm">4RUNNERS</h3>
+                                    <i class="ti ti-arrow-up-right"></i>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="headline-sm">Befly</h3>
-                        <p>Vestibulum id ligula porta felis.</p>
+                        <!-- Project 5 -->
+                        <div class="project-item pill" data-project="enelx">
+                            <div class="project-image">
+                                <img src="https://picsum.photos/seed/enelx/600/400" alt="EnelX">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">ENERGY 2026</span>
+                                <div class="project-title-row">
+                                    <h3 class="headline-sm">EnelX</h3>
+                                    <i class="ti ti-arrow-up-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 6 -->
+                        <div class="project-item pill" data-project="befly">
+                            <div class="project-image">
+                                <img src="https://picsum.photos/seed/befly/600/400" alt="Befly">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">TRAVEL 2026</span>
+                                <div class="project-title-row">
+                                    <h3 class="headline-sm">Befly</h3>
+                                    <i class="ti ti-arrow-up-right"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Duplicatas suficientes para garantir loop infinito suave em qualquer resolução -->
-                    <div class="project-item pill" data-project="twist">
-                        <div class="project-image"><img src="https://picsum.photos/seed/twist/600/400" alt="Twist">
-                        </div>
-                        <h3 class="headline-sm">Twist</h3>
-                        <p>Lorem ipsum dolor sit amet elit.</p>
-                    </div>
-                    <div class="project-item pill" data-project="botanica">
-                        <div class="project-image"><img src="https://picsum.photos/seed/botanica/600/400"
-                                alt="Botânica"></div>
-                        <h3 class="headline-sm">Botânica</h3>
-                        <p>Consectetur adipiscing elit brev.</p>
-                    </div>
-                    <div class="project-item pill" data-project="archello">
-                        <div class="project-image"><img src="https://picsum.photos/seed/archello/600/400"
-                                alt="Archello"></div>
-                        <h3 class="headline-sm">Archello</h3>
-                        <p>Mauris vitae est imperdiet sed.</p>
-                    </div>
-                    <div class="project-item pill" data-project="runners">
-                        <div class="project-image"><img src="https://picsum.photos/seed/runners/600/400" alt="4RUNNERS">
-                        </div>
-                        <h3 class="headline-sm">4RUNNERS</h3>
-                        <p>Nulla facilisi proin gravida nibh.</p>
-                    </div>
+                <!-- Navigation Arrows -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" aria-label="Anterior">
+                        <i class="ti ti-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" aria-label="Próximo">
+                        <i class="ti ti-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -173,7 +208,7 @@
             <div class="container contact-container glass pill">
                 <div class="contact-header">
                     <h2 class="headline-lg">VAMOS ELEVAR<br>SUA MARCA?</h2>
-                    <p>Entre em contato para iniciarmos o processo criativo.</p>
+                    <p>Entre em contato e descubra como o design criativo e disruptivo pode transformar seu negócio.</p>
                 </div>
                 <div class="whatsapp-cta">
                     <a href="https://wa.me/5517997427050" target="_blank" class="btn-whatsapp">
@@ -186,8 +221,7 @@
 
     <footer class="footer">
         <div class="container footer-content">
-            <p>© 2026 baze_creativa / Francielter Borges
-            </p>
+            <p class="copyright">francielterbborges@gmail.com</p>
         </div>
     </footer>
 
